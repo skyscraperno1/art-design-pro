@@ -570,19 +570,48 @@ export const roleRoutes: AppRouteRecordRaw[] = [
     ]
   },
   {
-    path: '/plan',
+    path: '/esim',
     component: Home,
-    name: 'Plan',
+    name: 'eSIM',
     meta: {
-      title: '版本计划'
+      title: 'eSIM管理'
     },
     children: [
       {
-        path: '/plan/log',
-        component: () => import('@views/plan/log.vue'),
+        path: '/esim/import',
+        component: () => import('@views/widgets/Excel.vue'),
         meta: {
-          title: '更新日志'
+          title: '导入订单',
+          title_en: 'Order Import'
         }
+      },
+      {
+        path: '/esim/preview',
+        name: 'Preview',
+        meta: {
+          title: 'eSIM一览',
+          title_en: 'eSIM Preview'
+        },
+        children: [
+          {
+            path: '/esim/preview/binding',
+            name: 'Binding Member',
+            component: () => import('@views/menu/nested/menu1.vue'),
+            meta: {
+              title: 'eSIM绑定',
+              title_en: 'eSIM Binding',
+            }
+          },
+          {
+            path: '/esim/preview/info',
+            name: 'eSIM Info',
+            component: () => import('@views/menu/nested/menu2/menu2-1.vue'),
+            meta: {
+              title: 'eSIM信息',
+              title_en: 'eSIM Info',
+            }
+          },
+        ]
       }
     ]
   }

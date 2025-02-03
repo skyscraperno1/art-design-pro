@@ -67,12 +67,20 @@ export default {
   },
   console: {
     card: ['总访问次数', '在线访客数', '点击量', '文章数', '留言数', '待办任务'],
+    dashboard: {
+      total: '总数',
+      unredeemed: '未兑换',
+      inUse: '使用中',
+      expired: '已过期'
+    },
     histogram: {
       title: '访问量'
     },
     dynamic: {
-      inUse: '使用中',
-      total: '总数'
+      member: '我的用户',
+      total: '总数',
+      user: '用户',
+      progress: '进度'
     }, 
     plan: {
       title: '计划'

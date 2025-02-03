@@ -11,19 +11,12 @@
         <el-form :model="searchForm" ref="searchFormRef" label-width="82px">
           <el-row :gutter="20">
             <form-input label="用户名" prop="name" v-model="searchForm.name" />
-            <form-input label="手机号" prop="phone" v-model="searchForm.phone" />
             <form-input label="邮箱" prop="email" v-model="searchForm.email" />
             <form-input label="账号" prop="account" v-model="searchForm.account" />
+            <form-select label="性别" prop="sex" v-model="searchForm.sex" :options="sexOptions" />
           </el-row>
           <el-row :gutter="20">
             <form-input label="用户ID" prop="id" v-model="searchForm.id" />
-            <form-select label="性别" prop="sex" v-model="searchForm.sex" :options="sexOptions" />
-            <form-select
-              label="会员等级"
-              prop="level"
-              v-model="searchForm.level"
-              :options="levelOptions"
-            />
           </el-row>
         </el-form>
       </template>
@@ -32,34 +25,34 @@
       </template>
     </table-bar>
 
-    <art-table :data="tableData" selection :currentPage="1" :pageSize="10" :total="50">
+    <art-table :data="tableData" :currentPage="1" :pageSize="10" :total="50">
       <template #default>
         <el-table-column
           label="用户名"
           prop="avatar"
           #default="scope"
-          width="300px"
+          width="200px"
           v-if="columns[0].show"
         >
           <div class="user" style="display: flex; align-items: center">
             <img class="avatar" :src="scope.row.avatar" />
             <div>
               <p class="user-name">{{ scope.row.username }}</p>
-              <p class="email">{{ scope.row.email }}</p>
+              <p class="mobile">{{ scope.row.mobile }}</p>
             </div>
           </div>
         </el-table-column>
-        <el-table-column label="手机号" prop="mobile" v-if="columns[1].show" />
+          <el-table-column label="邮箱" prop="email" width="200px" v-if="columns[1].show" />
         <el-table-column label="性别" prop="sex" #default="scope" sortable v-if="columns[2].show">
           {{ scope.row.sex === 1 ? '男' : '女' }}
         </el-table-column>
-        <el-table-column label="部门" prop="dep" v-if="columns[3].show" />
+        <el-table-column label="ESIM" prop="esim" v-if="columns[3].show" />
         <el-table-column
           label="状态"
           prop="status"
           :filters="[
-            { text: '在线', value: '1' },
-            { text: '离线', value: '2' },
+            { text: '已验证', value: '1' },
+            { text: '未验证', value: '2' },
             { text: '异常', value: '3' },
             { text: '注销', value: '4' }
           ]"
@@ -92,8 +85,8 @@
         <el-form-item label="用户名" prop="username">
           <el-input v-model="formData.username" />
         </el-form-item>
-        <el-form-item label="手机号" prop="phone">
-          <el-input v-model="formData.phone" />
+        <el-form-item label="邮箱" prop="email">
+          <el-input v-model="formData.email" />
         </el-form-item>
         <el-form-item label="性别" prop="sex">
           <el-select v-model="formData.sex">
@@ -101,12 +94,8 @@
             <el-option label="女" value="女" />
           </el-select>
         </el-form-item>
-        <el-form-item label="部门" prop="dep">
-          <el-select v-model="formData.dep">
-            <el-option label="董事会部" :value="1" />
-            <el-option label="市场部" :value="2" />
-            <el-option label="技术部" :value="3" />
-          </el-select>
+        <el-form-item label="ESIM" prop="esim">
+          <el-input v-model="formData.esim" />
         </el-form-item>
       </el-form>
       <template #footer>
@@ -130,9 +119,9 @@
 
   const formData = reactive({
     username: '',
-    phone: '',
+    email: '',
     sex: '',
-    dep: ''
+    esim: ''
   })
 
   const sexOptions = [
@@ -145,22 +134,12 @@
       label: '女'
     }
   ]
-  const levelOptions = [
-    {
-      value: '1',
-      label: '普通用户'
-    },
-    {
-      value: '2',
-      label: ' VIP'
-    }
-  ]
 
   const columns = reactive([
     { name: '用户名', show: true },
-    { name: '手机号', show: true },
+    { name: '邮箱', show: true },
     { name: '性别', show: true },
-    { name: '部门', show: true },
+    { name: 'ESIM', show: true },
     { name: '状态', show: true },
     { name: '创建日期', show: true }
   ])
@@ -189,14 +168,14 @@
 
     if (type === 'edit' && row) {
       formData.username = row.username
-      formData.phone = row.mobile
+      formData.email = row.email
       formData.sex = row.sex === 1 ? '男' : '女'
-      formData.dep = row.dep
+      formData.esim = row.esim
     } else {
       formData.username = ''
-      formData.phone = ''
+      formData.email = ''
       formData.sex = '男'
-      formData.dep = ''
+      formData.esim = ''
     }
   }
 
@@ -238,9 +217,9 @@
   const buildTagText = (status: string) => {
     let text = ''
     if (status === '1') {
-      text = '在线'
+      text = '已验证'
     } else if (status === '2') {
-      text = '离线'
+      text = '未验证'
     } else if (status === '3') {
       text = '异常'
     } else if (status === '4') {

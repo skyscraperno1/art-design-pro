@@ -2,16 +2,17 @@
   <div class="region new-user art-custom-card">
     <div class="card-header">
       <div class="title">
-        <h4 class="custom-text box-title">{{ $t('console.dynamic.inUse') }} ESIM</h4>
+        <h4 class="custom-text box-title">{{ $t('console.dashboard.inUse') }} ESIM</h4>
       </div>
     </div>
     <art-table :data="tableData" :pagination="false">
       <template #default>
-        <el-table-column label="用户" prop="username" width="150px">
+        <el-table-column :label="$t('console.dynamic.user')" prop="username" width="150px">
         </el-table-column>
-        <el-table-column label="进度" >
+        <el-table-column :label="$t('console.dynamic.progress')" >
           <template #default="scope">
-            <el-progress :percentage="scope.row.pro" :color="scope.row.color" :stroke-width="4" />
+              <el-progress :percentage="scope.row.pro" :color="scope.row.color" :stroke-width="4" />
+              <span style="white-space: nowrap">{{ scope.row.used }}G/{{ scope.row.total }}G</span>
           </template>
         </el-table-column>
       </template>
@@ -30,24 +31,32 @@
 
   const tableData = reactive([
     {
-      username: '中小鱼',
+      username: 'Card1',
       percentage: 60,
       color: '#2C90FF !important',
+      used: 15,
+      total: 20
     },
     {
-      username: '何小荷',
+      username: 'Card2',
       percentage: 20,
       color: '#BC7FEB !important',
+      used: 4,
+      total: 20
     },
     {
-      username: '誶誶淰',
+      username: 'Card3',
       percentage: 60,
       color: '#95DE64 !important',
+      used: 12,
+      total: 20
     },
     {
-      username: '发呆草',
+      username: 'Card4',
       percentage: 50,
       color: '#B7CBE2 !important',
+      used: 10,
+      total: 20
     },
   ])
 
@@ -96,6 +105,7 @@
 <style lang="scss" scoped>
   .region {
     width: 50%;
+    overflow: hidden;
 
     .any-table {
       box-shadow: none;

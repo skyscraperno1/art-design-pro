@@ -74,12 +74,20 @@ export default {
       'Number of messages',
       'To do task'
     ],
+    dashboard: {
+      total: 'Total',
+      unredeemed: 'Unredeemed',
+      inUse: 'In Use',
+      expired: 'Expired'
+    },
     histogram: {
       title: 'Visits'
     },
     dynamic: {
-      inUse: 'In use',
-      total: 'Total'
+      member: 'My Member',
+      total: 'Total',
+      user: 'User',
+      progress: 'Progress'
     }, 
     plan: {
       title: 'Plan'

@@ -295,56 +295,56 @@ export const menuData: MenuListType[] = [
   //     }
   //   ]
   // },
-  // {
-  //   id: 2,
-  //   name: 'User',
-  //   path: '/user',
-  //   meta: {
-  //     title: '用户管理',
-  //     title_en: 'User manguage',
-  //     icon: '&#xe86e;'
-  //   },
-  //   children: [
-  //     {
-  //       id: 301,
-  //       path: '/user/account',
-  //       meta: {
-  //         title: '账号管理',
-  //         title_en: 'Account manguage',
-  //         keepAlive: true
-  //       }
-  //     },
-  //     {
-  //       id: 302,
-  //       path: '/user/department',
-  //       meta: {
-  //         title: '部门管理',
-  //         title_en: 'Department manguage',
-  //         keepAlive: true
-  //       }
-  //     },
-  //     {
-  //       id: 303,
-  //       path: '/user/role',
-  //       meta: {
-  //         title: '角色权限',
-  //         title_en: 'Roles',
-  //         keepAlive: true
-  //       }
-  //     },
-  //     {
-  //       id: 304,
-  //       path: '/user/user',
-  //       meta: {
-  //         title: '个人中心',
-  //         title_en: 'User center',
-  //         isHide: true,
-  //         keepAlive: true,
-  //         isHideTab: true
-  //       }
-  //     }
-  //   ]
-  // },
+  {
+    id: 2,
+    name: 'User',
+    path: '/user',
+    meta: {
+      title: '用户管理',
+      title_en: 'User manguage',
+      icon: '&#xe86e;'
+    },
+    children: [
+      {
+        id: 301,
+        path: '/user/account',
+        meta: {
+          title: '账号管理',
+          title_en: 'Account manguage',
+          keepAlive: true
+        }
+      },
+      // {
+      //   id: 302,
+      //   path: '/user/department',
+      //   meta: {
+      //     title: '部门管理',
+      //     title_en: 'Department manguage',
+      //     keepAlive: true
+      //   }
+      // },
+      // {
+      //   id: 303,
+      //   path: '/user/role',
+      //   meta: {
+      //     title: '角色权限',
+      //     title_en: 'Roles',
+      //     keepAlive: true
+      //   }
+      // },
+      // {
+      //   id: 304,
+      //   path: '/user/user',
+      //   meta: {
+      //     title: '个人中心',
+      //     title_en: 'User center',
+      //     isHide: true,
+      //     keepAlive: true,
+      //     isHideTab: true
+      //   }
+      // }
+    ]
+  },
   // {
   //   id: 3,
   //   path: '/menu',
@@ -547,55 +547,55 @@ export const menuData: MenuListType[] = [
   //     }
   //   ]
   // },
-  {
-    id: 8,
-    path: '/exception',
-    name: 'Exception',
-    meta: {
-      title: '异常页面',
-      title_en: 'Exception',
-      icon: '&#xe820;'
-    },
-    children: [
-      {
-        id: 801,
-        path: '/exception/403',
-        meta: {
-          title: '403',
-          title_en: '403',
-          keepAlive: true
-        }
-      },
-      {
-        id: 802,
-        path: '/exception/404',
-        meta: {
-          title: '404',
-          title_en: '404',
-          keepAlive: true
-        }
-      },
-      {
-        id: 803,
-        path: '/exception/500',
-        meta: {
-          title: '500',
-          title_en: '500',
-          keepAlive: true
-        }
-      }
-    ]
-  },
-  {
-    id: 9,
-    path: '/system',
-    name: 'System',
-    meta: {
-      title: '系统设置',
-      title_en: 'System setting',
-      icon: '&#xe7b9;'
-    },
-    children: [
+  // {
+  //   id: 8,
+  //   path: '/exception',
+  //   name: 'Exception',
+  //   meta: {
+  //     title: '异常页面',
+  //     title_en: 'Exception',
+  //     icon: '&#xe820;'
+  //   },
+  //   children: [
+  //     {
+  //       id: 801,
+  //       path: '/exception/403',
+  //       meta: {
+  //         title: '403',
+  //         title_en: '403',
+  //         keepAlive: true
+  //       }
+  //     },
+  //     {
+  //       id: 802,
+  //       path: '/exception/404',
+  //       meta: {
+  //         title: '404',
+  //         title_en: '404',
+  //         keepAlive: true
+  //       }
+  //     },
+  //     {
+  //       id: 803,
+  //       path: '/exception/500',
+  //       meta: {
+  //         title: '500',
+  //         title_en: '500',
+  //         keepAlive: true
+  //       }
+  //     }
+  //   ]
+  // },
+  // {
+  //   id: 9,
+  //   path: '/system',
+  //   name: 'System',
+  //   meta: {
+  //     title: '系统设置',
+  //     title_en: 'System setting',
+  //     icon: '&#xe7b9;'
+  //   },
+    // children: [
       // {
       //   id: 901,
       //   path: '/system/setting',
@@ -614,17 +614,17 @@ export const menuData: MenuListType[] = [
       //     keepAlive: true
       //   }
       // },
-      {
-        id: 903,
-        path: '/system/log',
-        meta: {
-          title: '系统日志',
-          title_en: 'System log',
-          keepAlive: true
-        }
-      }
-    ]
-  },
+  //     {
+  //       id: 903,
+  //       path: '/system/log',
+  //       meta: {
+  //         title: '系统日志',
+  //         title_en: 'System log',
+  //         keepAlive: true
+  //       }
+  //     }
+  //   ]
+  // },
   // {
   //   id: 10,
   //   path: '/safeguard',
@@ -646,28 +646,61 @@ export const menuData: MenuListType[] = [
   //     }
   //   ]
   // },
-  // {
-  //   id: 11,
-  //   path: '/plan',
-  //   name: 'Plan',
-  //   meta: {
-  //     title: '版本计划',
-  //     title_en: 'Version Plan',
-  //     icon: '&#xe712;'
-  //   },
-  //   children: [
-  //     {
-  //       id: 1110,
-  //       path: '/plan/log',
-  //       meta: {
-  //         title: '更新日志',
-  //         title_en: 'Update Plan',
-  //         showTextBadge: `${upgradeLogList.value[0].version}`,
-  //         keepAlive: true
-  //       }
-  //     }
-  //   ]
-  // },
+  {
+    id: 11,
+    path: '/esim',
+    name: 'eSIM',
+    meta: {
+      title: 'eSIM管理',
+      title_en: 'eSIM Manage',
+      icon: '&#xe712;'
+    },
+    children: [
+      {
+        id: 1110,
+        path: '/esim/import',
+        name: 'Import',
+        meta: {
+          title: '订单导入',
+          title_en: 'Order Import',
+          keepAlive: true
+        }
+      },
+      {
+        id: 1111,
+        path: '/esim/preview',
+        name: 'Preview',
+        meta: {
+          title: 'eSIM一览',
+          icon: '&#xe676;',
+          title_en: 'eSIM Preview',
+          keepAlive: true,
+        },
+        children: [
+          {
+            id: 111101,
+            path: '/esim/preview/binding',
+            name: 'Binding Member',
+            meta: {
+              title: 'eSIM绑定',
+              title_en: 'eSIM Binding',
+              keepAlive: true
+            }
+          },
+          {
+            id: 111102,
+            path: '/esim/preview/info',
+            name: 'eSIM Info',
+            meta: {
+              title: 'eSIM信息',
+              title_en: 'eSIM Info',
+              keepAlive: true
+            }
+          }
+        ]
+      }
+    ]
+  },
   // {
   //   id: 12,
   //   name: '0',

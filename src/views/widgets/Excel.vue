@@ -21,6 +21,7 @@
 
     <art-table :data="tableData" style="margin-top: 10px">
       <el-table-column
+        v-if="headers"
         v-for="key in Object.keys(headers)"
         :key="key"
         :prop="key"
@@ -31,22 +32,14 @@
 </template>
 
 <script setup lang="ts">
-  interface TableData {
-    name: string
-    age: number
-    city: string
-  }
 
   const handleImportSuccess = (data: any[]) => {
-    // 将导入的数据转换为正确的格式
-    const formattedData = data.map((item) => ({
-      name: item['姓名'],
-      age: Number(item['年龄']),
-      city: item['城市']
-    }))
-    tableData.value = formattedData
-
-    // tableData.value = data
+    if (data?.length) {
+      headers.value = Object.fromEntries(
+        Object.keys(data[0]).map(key => [key, key])
+      );
+    }
+    tableData.value = data
   }
 
   const handleImportError = (error: Error) => {
@@ -55,25 +48,10 @@
   }
 
   // 使用类型化的ref
-  const tableData = ref<TableData[]>([
-    { name: '李四', age: 20, city: '上海' },
-    { name: '张三', age: 25, city: '北京' },
-    { name: '王五', age: 30, city: '广州' },
-    { name: '赵六', age: 35, city: '深圳' },
-    { name: '孙七', age: 28, city: '杭州' },
-    { name: '周八', age: 32, city: '成都' },
-    { name: '吴九', age: 27, city: '武汉' },
-    { name: '郑十', age: 40, city: '南京' },
-    { name: '刘一', age: 22, city: '重庆' },
-    { name: '陈二', age: 33, city: '西安' }
-  ])
+  const tableData = ref<any[]>([])
 
   // 自定义表头映射
-  const headers = {
-    name: '姓名',
-    age: '年龄',
-    city: '城市'
-  }
+  const headers = ref<Record<string, string> | undefined>()
 
   const handleExportSuccess = () => {
     ElMessage.success('导出成功')
@@ -85,5 +63,6 @@
 
   const handleClear = () => {
     tableData.value = []
+    headers.value = undefined
   }
 </script>

@@ -2,57 +2,56 @@
   <div class="region dynamic art-custom-card">
     <div class="card-header">
       <div class="title">
-        <h4 class="custom-text box-title">{{ $t('console.dynamic.inUse') }}</h4>
+        <h4 class="custom-text box-title">{{ $t('console.dynamic.member') }}</h4>
         <p class="custom-text subtitle">{{ $t('console.dynamic.total') }} <span>{{ num }}</span></p>
       </div>
     </div>
-
-    <div class="list">
-      <div v-for="(item, index) in list" :key="index">
-        <span class="user">{{ item.username }}</span>
-        <span class="type">{{ item.type }}</span>
-        <span class="target">{{ item.target }}</span>
-      </div>
-    </div>
+    <art-table :data="list" :pagination="false">
+      <template #default>
+        <el-table-column :label="$t('console.dynamic.user')" prop="username" width="150">
+          <template #default="scope">
+            <div style="display: flex; align-items: center">
+              <img class="avatar" :src="scope.row.avatar" />
+              <span class="user-name">{{ scope.row.username }}</span>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column label="Remark" prop="type" />
+      </template>
+    </art-table>
   </div>
 </template>
 
 <script setup lang="ts">
   import { reactive } from 'vue-demi'
+  import avatar1 from '@/assets/img/avatar/avatar1.jpg'
+  import avatar2 from '@/assets/img/avatar/avatar2.jpg'
+  import avatar3 from '@/assets/img/avatar/avatar3.jpg'
+  import avatar4 from '@/assets/img/avatar/avatar4.jpg'
 
   const num = 4
 
   const list = reactive([
     {
       username: '中小鱼',
-      type: '关注了',
-      target: '誶誶淰'
+      type: '',
+      avatar: avatar1,
     },
     {
       username: '何小荷',
-      type: '发表文章',
-      target: 'Vue3 + Typescript + Vite 项目实战笔记'
+      type: '',
+      avatar: avatar2,
     },
     {
       username: '誶誶淰',
-      type: '提出问题',
-      target: '主题可以配置吗'
+      type: '',
+      avatar: avatar3,
     },
     {
       username: '发呆草',
-      type: '兑换了物品',
-      target: '《奇特的一生》'
+      type: '123',
+      avatar: avatar4,
     },
-    {
-      username: '甜筒',
-      type: '关闭了问题',
-      target: '发呆草'
-    },
-    {
-      username: '冷月呆呆',
-      type: '兑换了物品',
-      target: '《高效人士的七个习惯》'
-    }
   ])
 </script>
 
@@ -62,6 +61,16 @@
     flex: 1;
     padding: 0 25px;
     margin-left: var(--console-margin);
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+    }
+
+    .user-name {
+      margin-left: 10px;
+    }
 
     .header {
       display: flex;

@@ -16,13 +16,15 @@
 <script setup lang="ts">
   import { useSettingStore } from '@/store/modules/setting'
   import { CountTo } from 'vue3-count-to'
-
+  import { useI18n } from 'vue-i18n'
+  
+  const { t } = useI18n();
   const settingStore = useSettingStore()
   const showWorkTab = computed(() => settingStore.showWorkTab)
 
   const dataList = reactive([
     {
-      des: '总数',
+      des: t('console.dashboard.total'),
       icon: '&#xe721;',
       startVal: 0,
       duration: 500,
@@ -30,7 +32,7 @@
       change: '+20%'
     },
     {
-      des: '未兑换',
+      des: t('console.dashboard.unredeemed'),
       icon: '&#xe724;',
       startVal: 0,
       duration: 1,
@@ -38,7 +40,7 @@
       change: '+10%'
     },
     {
-      des: '使用中',
+      des: t('console.dashboard.inUse'),
       icon: '&#xe7aa;',
       startVal: 0,
       duration: 500,
@@ -46,7 +48,7 @@
       change: '-12%'
     },
     {
-      des: '已过期',
+      des: t('console.dashboard.expired'),
       icon: '&#xe82a;',
       startVal: 0,
       duration: 500,
