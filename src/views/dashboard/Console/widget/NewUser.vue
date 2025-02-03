@@ -2,34 +2,14 @@
   <div class="region new-user art-custom-card">
     <div class="card-header">
       <div class="title">
-        <h4 class="custom-text box-title">新用户</h4>
-        <p class="custom-text subtitle">这个月增长<span>+20%</span></p>
+        <h4 class="custom-text box-title">{{ $t('console.dynamic.inUse') }} ESIM</h4>
       </div>
-      <el-radio-group v-model="radio2">
-        <el-radio-button value="本月" label="本月"></el-radio-button>
-        <el-radio-button value="上月" label="上月"></el-radio-button>
-        <el-radio-button value="今年" label="今年"></el-radio-button>
-      </el-radio-group>
     </div>
     <art-table :data="tableData" :pagination="false">
       <template #default>
-        <el-table-column label="头像" prop="avatar" width="150px">
-          <template #default="scope">
-            <div style="display: flex; align-items: center">
-              <img class="avatar" :src="scope.row.avatar" />
-              <span class="user-name">{{ scope.row.username }}</span>
-            </div>
-          </template>
+        <el-table-column label="用户" prop="username" width="150px">
         </el-table-column>
-        <el-table-column label="地区" prop="province" />
-        <el-table-column label="性别" prop="avatar">
-          <template #default="scope">
-            <div style="display: flex; align-items: center">
-              <span style="margin-left: 10px">{{ scope.row.sex === 1 ? '男' : '女' }}</span>
-            </div>
-          </template>
-        </el-table-column>
-        <el-table-column label="进度" width="240">
+        <el-table-column label="进度" >
           <template #default="scope">
             <el-progress :percentage="scope.row.pro" :color="scope.row.color" :stroke-width="4" />
           </template>
@@ -48,69 +28,27 @@
   import avatar5 from '@/assets/img/avatar/avatar5.jpg'
   import avatar6 from '@/assets/img/avatar/avatar6.jpg'
 
-  const radio2 = ref('本月')
-
   const tableData = reactive([
     {
       username: '中小鱼',
-      province: '北京',
-      sex: 0,
-      age: 22,
       percentage: 60,
-      pro: 0,
       color: '#2C90FF !important',
-      avatar: avatar1
     },
     {
       username: '何小荷',
-      province: '深圳',
-      sex: 1,
-      age: 21,
       percentage: 20,
-      pro: 0,
       color: '#BC7FEB !important',
-      avatar: avatar2
     },
     {
       username: '誶誶淰',
-      province: '上海',
-      sex: 1,
-      age: 23,
       percentage: 60,
-      pro: 0,
       color: '#95DE64 !important',
-      avatar: avatar3
     },
     {
       username: '发呆草',
-      province: '长沙',
-      sex: 0,
-      age: 28,
       percentage: 50,
-      pro: 0,
       color: '#B7CBE2 !important',
-      avatar: avatar4
     },
-    {
-      username: '甜筒',
-      province: '浙江',
-      sex: 1,
-      age: 26,
-      percentage: 70,
-      pro: 0,
-      color: '#909399 !important',
-      avatar: avatar5
-    },
-    {
-      username: '冷月呆呆',
-      province: '湖北',
-      sex: 1,
-      age: 25,
-      percentage: 90,
-      pro: 0,
-      color: '#9BB4F3 !important',
-      avatar: avatar6
-    }
   ])
 
   onMounted(() => {

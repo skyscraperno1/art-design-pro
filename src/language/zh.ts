@@ -70,6 +70,10 @@ export default {
     histogram: {
       title: '访问量'
     },
+    dynamic: {
+      inUse: '使用中',
+      total: '总数'
+    }, 
     plan: {
       title: '计划'
     },
@@ -237,6 +241,10 @@ export default {
         volume: '业务量',
         services: '服务'
       }
+    },
+    notFound: {
+      desc: '抱歉，你访问的页面不存在e',
+      btn: '返回首页' 
     }
   }
 }

@@ -2,8 +2,8 @@
   <div class="region dynamic art-custom-card">
     <div class="card-header">
       <div class="title">
-        <h4 class="custom-text box-title">动态</h4>
-        <p class="custom-text subtitle">新增<span>+6</span></p>
+        <h4 class="custom-text box-title">{{ $t('console.dynamic.inUse') }}</h4>
+        <p class="custom-text subtitle">{{ $t('console.dynamic.total') }} <span>{{ num }}</span></p>
       </div>
     </div>
 
@@ -19,6 +19,8 @@
 
 <script setup lang="ts">
   import { reactive } from 'vue-demi'
+
+  const num = 4
 
   const list = reactive([
     {
@@ -69,7 +71,6 @@
 
     .list {
       height: calc(100% - 100px);
-      margin-top: 10px;
       overflow: hidden;
 
       > div {

@@ -184,14 +184,14 @@ export const roleRoutes: AppRouteRecordRaw[] = [
       title: '用户管理'
     },
     children: [
-      {
-        path: '/user/user',
-        name: 'Users',
-        component: () => import('@views/user/User.vue'),
-        meta: {
-          title: '个人中心'
-        }
-      },
+      // {
+      //   path: '/user/user',
+      //   name: 'Users',
+      //   component: () => import('@views/user/User.vue'),
+      //   meta: {
+      //     title: '个人中心'
+      //   }
+      // },
       {
         path: '/user/account',
         name: 'Account',

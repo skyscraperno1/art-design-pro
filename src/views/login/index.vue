@@ -17,15 +17,15 @@
           <template #dropdown>
             <el-dropdown-menu>
               <div class="lang-btn-item">
-                <el-dropdown-item command="zh">
-                  <span class="menu-txt">简体中文</span>
-                  <i v-if="locale === 'zh'" class="iconfont-sys">&#xe621;</i>
-                </el-dropdown-item>
-              </div>
-              <div class="lang-btn-item">
                 <el-dropdown-item command="en">
                   <span class="menu-txt">English</span>
                   <i v-if="locale === 'en'" class="iconfont-sys">&#xe621;</i>
+                </el-dropdown-item>
+              </div>
+              <div class="lang-btn-item">
+                <el-dropdown-item command="zh">
+                  <span class="menu-txt">简体中文</span>
+                  <i v-if="locale === 'zh'" class="iconfont-sys">&#xe621;</i>
                 </el-dropdown-item>
               </div>
             </el-dropdown-menu>
@@ -174,7 +174,7 @@
       if (code === ApiStatus.success) {
         userStore.setUserInfo(data)
         userStore.setLoginStatus(true)
-        showLoginSuccessNotice()
+        // showLoginSuccessNotice()
         router.push(HOME_PAGE)
       } else {
         ElMessage.error(res.data.message)

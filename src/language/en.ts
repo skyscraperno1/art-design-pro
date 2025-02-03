@@ -77,6 +77,10 @@ export default {
     histogram: {
       title: 'Visits'
     },
+    dynamic: {
+      inUse: 'In use',
+      total: 'Total'
+    }, 
     plan: {
       title: 'Plan'
     },
@@ -253,6 +257,10 @@ export default {
         volume: 'Volume',
         services: 'Services'
       }
+    },
+    notFound: {
+      desc: 'Sorry, this is an invalid page',
+      btn: 'Go Back' 
     }
-  }
+  },
 }

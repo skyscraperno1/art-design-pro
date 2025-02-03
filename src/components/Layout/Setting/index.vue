@@ -224,7 +224,7 @@
           </div>
         </div>
 
-        <p class="title" style="margin-top: 50px">{{ $t('setting.basics.title') }}</p>
+        <!-- <p class="title" style="margin-top: 50px">{{ $t('setting.basics.title') }}</p>
         <div class="basic-box">
           <div class="item" style="display: flex">
             <span>{{ $t('setting.basics.list[0]') }}</span>
@@ -313,7 +313,7 @@
               />
             </el-select>
           </div>
-        </div>
+        </div> -->
       </div>
     </el-drawer>
   </div>

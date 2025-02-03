@@ -1,50 +1,10 @@
 <template>
   <div class="console">
     <CardList></CardList>
-
-    <div class="column column2">
-      <ActiveUser></ActiveUser>
-      <SalesOverview></SalesOverview>
-    </div>
-
     <div class="column column3">
       <NewUser></NewUser>
       <Dynamic></Dynamic>
       <TodoList></TodoList>
-    </div>
-
-    <div class="bottom-wrap art-custom-card">
-      <div>
-        <h2 class="custom-text box-title">关于项目</h2>
-        <p>{{ systemName }} 是一款专注于用户体验和视觉设计的后台管理系统模版</p>
-        <p>使用了 Vue3、TypeScript、Vite、Element Plus 等前沿技术</p>
-
-        <div class="button-wrap">
-          <div
-            class="btn art-custom-card"
-            @click="goPage('https://www.lingchen.kim/art-design-pro/docs/')"
-          >
-            <span>项目官网</span>
-            <i class="iconfont-sys">&#xe703;</i>
-          </div>
-          <div
-            class="btn art-custom-card"
-            @click="goPage('https://www.lingchen.kim/art-design-pro/docs/guide/introduce.html')"
-          >
-            <span>文档</span>
-            <i class="iconfont-sys">&#xe703;</i>
-          </div>
-          <div class="btn art-custom-card" @click="goPage('https://github.com/Daymychen')">
-            <span>Github</span>
-            <i class="iconfont-sys">&#xe703;</i>
-          </div>
-          <div class="btn art-custom-card" @click="goPage('https://www.lingchen.kim')">
-            <span>博客</span>
-            <i class="iconfont-sys">&#xe703;</i>
-          </div>
-        </div>
-      </div>
-      <img class="right-img" src="@imgs/draw/draw1.png" />
     </div>
   </div>
 </template>
@@ -68,13 +28,7 @@
     settingStore.reload()
   })
 
-  const systemName = SystemInfo.name
   scrollToTop()
-
-  const goPage = (url: string) => {
-    // 跳转到新页面
-    window.open(url)
-  }
 </script>
 
 <style lang="scss" scoped>
@@ -92,16 +46,7 @@
           font-weight: 500;
           color: var(--art-text-gray-800);
         }
-
-        p {
-          margin-top: 3px;
-          font-size: 13px;
-
-          span {
-            margin-left: 10px;
-            color: #52c41a;
-          }
-        }
+       
       }
     }
 

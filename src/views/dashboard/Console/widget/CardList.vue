@@ -5,18 +5,9 @@
       <CountTo
         class="number custom-text box-title"
         :endVal="item.num"
-        :duration="1000"
+        :duration="500"
         separator=""
       ></CountTo>
-      <div class="change-box">
-        <span class="change-text">较上周</span>
-        <span
-          class="change custom-text"
-          :style="{ color: item.change.indexOf('+') === -1 ? 'red' : '#52c41a' }"
-        >
-          {{ item.change }}
-        </span>
-      </div>
       <i class="iconfont-sys custom-text" v-html="item.icon"></i>
     </li>
   </ul>
@@ -31,35 +22,35 @@
 
   const dataList = reactive([
     {
-      des: '总访问次数',
+      des: '总数',
       icon: '&#xe721;',
       startVal: 0,
-      duration: 1000,
-      num: 9120,
+      duration: 500,
+      num: 5,
       change: '+20%'
     },
     {
-      des: '在线访客数',
+      des: '未兑换',
       icon: '&#xe724;',
       startVal: 0,
-      duration: 1000,
-      num: 182,
+      duration: 1,
+      num: 1,
       change: '+10%'
     },
     {
-      des: '点击量',
+      des: '使用中',
       icon: '&#xe7aa;',
       startVal: 0,
-      duration: 1000,
-      num: 9520,
+      duration: 500,
+      num: 4,
       change: '-12%'
     },
     {
-      des: '新用户',
+      des: '已过期',
       icon: '&#xe82a;',
       startVal: 0,
-      duration: 1000,
-      num: 156,
+      duration: 500,
+      num: 0,
       change: '+30%'
     }
   ])

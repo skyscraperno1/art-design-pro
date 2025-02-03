@@ -26,7 +26,7 @@
           </div>
         </div>
         <!-- 快速入口 -->
-        <fast-enter v-if="width >= 1200" />
+        <!-- <fast-enter v-if="width >= 1200" /> -->
         <!-- 面包屑 -->
         <breadcrumb
           v-if="(showCrumbs && isLeftMenu) || (showCrumbs && isDualMenu)"
@@ -42,7 +42,7 @@
 
       <div class="right">
         <!-- 搜索 -->
-        <div class="search-wrap">
+        <!-- <div class="search-wrap">
           <div class="search-input" @click="openSearchDialog">
             <div class="left">
               <i class="iconfont-sys">&#xe710;</i>
@@ -54,7 +54,7 @@
               <span>k</span>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- 全屏按钮 -->
         <div class="btn-box screen-box" @click="toggleFullScreen">
@@ -72,19 +72,19 @@
           </div>
         </div>
         <!-- 通知 -->
-        <div class="btn-box notice-btn" @click="visibleNotice">
+        <!-- <div class="btn-box notice-btn" @click="visibleNotice">
           <div class="btn notice-button">
             <i class="iconfont-sys notice-btn">&#xe6c2;</i>
             <span class="count notice-btn"></span>
           </div>
-        </div>
+        </div> -->
         <!-- 聊天 -->
-        <div class="btn-box chat-btn" @click="openChat">
+        <!-- <div class="btn-box chat-btn" @click="openChat">
           <div class="btn">
             <i class="iconfont-sys">&#xe89a;</i>
             <span class="dot"></span>
           </div>
-        </div>
+        </div> -->
         <!-- 语言 -->
         <div class="btn-box" v-if="showLanguage">
           <el-dropdown @command="changeLanguage">
@@ -94,15 +94,15 @@
             <template #dropdown>
               <el-dropdown-menu>
                 <div class="lang-btn-item">
-                  <el-dropdown-item command="zh">
-                    <span class="menu-txt">简体中文</span>
-                    <i v-if="locale === 'zh'" class="iconfont-sys">&#xe621;</i>
-                  </el-dropdown-item>
-                </div>
-                <div class="lang-btn-item">
                   <el-dropdown-item command="en">
                     <span class="menu-txt">English</span>
                     <i v-if="locale === 'en'" class="iconfont-sys">&#xe621;</i>
+                  </el-dropdown-item>
+                </div>
+                <div class="lang-btn-item">
+                  <el-dropdown-item command="zh">
+                    <span class="menu-txt">简体中文</span>
+                    <i v-if="locale === 'zh'" class="iconfont-sys">&#xe621;</i>
                   </el-dropdown-item>
                 </div>
               </el-dropdown-menu>
@@ -111,11 +111,12 @@
         </div>
         <!-- 设置 -->
         <div class="btn-box" @click="openSetting">
-          <el-popover :visible="showSettingGuide" placement="bottom-start" :width="190" :offset="0">
+          <div class="btn setting-btn">
+              <i class="iconfont-sys">&#xe6d0;</i>
+          </div>
+          <!-- <el-popover :visible="showSettingGuide" placement="bottom-start" :width="190" :offset="0">
             <template #reference>
-              <div class="btn setting-btn">
-                <i class="iconfont-sys">&#xe6d0;</i>
-              </div>
+              
             </template>
             <template #default>
               <p
@@ -123,7 +124,7 @@
                 <span :style="{ color: systemThemeColor }"> 开启顶栏菜单 </span>等更多配置
               </p>
             </template>
-          </el-popover>
+          </el-popover> -->
         </div>
         <!-- 切换主题 -->
         <div class="btn-box" @click="toggleTheme">
@@ -161,14 +162,14 @@
                     <i class="menu-icon iconfont-sys">&#xe734;</i>
                     <span class="menu-txt">{{ $t('topBar.user[0]') }}</span>
                   </li>
-                  <li @click="toDocs()">
+                  <!-- <li @click="toDocs()">
                     <i class="menu-icon iconfont-sys" style="font-size: 15px">&#xe828;</i>
                     <span class="menu-txt">{{ $t('topBar.user[1]') }}</span>
                   </li>
                   <li @click="toGithub()">
                     <i class="menu-icon iconfont-sys">&#xe8d6;</i>
                     <span class="menu-txt">{{ $t('topBar.user[2]') }}</span>
-                  </li>
+                  </li> -->
                   <li @click="loginOut">
                     <i class="menu-icon iconfont-sys">&#xe780;</i>
                     <span class="menu-txt">{{ $t('topBar.user[3]') }}</span>

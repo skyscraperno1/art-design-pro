@@ -16,8 +16,8 @@
   const elSize = computed(() => (document.body.clientWidth >= 500 ? 'large' : 'default'))
 
   const locales = {
-    zh: zh,
-    en: en
+    en: en,
+    zh: zh
   }
 
   onBeforeMount(() => {
