@@ -279,5 +279,32 @@ export default {
     purchaseOnOfficial: '公式サイトで購入',
     scanQRCode: 'QRコードをスキャン',
     required: 'この項目は必須です'
+  },
+  recharge: {
+    title: 'アカウントチャージ',
+    balance: '現在の残高',
+    history: {
+      title: 'チャージ履歴',
+      time: 'チャージ時間',
+      amount: 'チャージ金額',
+      method: '支払方法',
+      methods: {
+        alipay: 'Alipay',
+        wechat: 'WeChat Pay',
+        card: '銀行カード'
+      }
+    },
+    consumption: {
+      title: '消費履歴',
+      time: '消費時間',
+      amount: '消費金額',
+      type: '消費タイプ',
+      description: '説明',
+      types: {
+        service: 'サービス料金',
+        subscription: '定期購読料金',
+        other: 'その他の料金'
+      }
+    }
   }
 } 

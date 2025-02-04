@@ -291,4 +291,31 @@ export default {
     scanQRCode: 'Scan QR Code',
     required: 'This field is required'
   },
+  recharge: {
+    title: 'Account Recharge',
+    balance: 'Current Balance',
+    history: {
+      title: 'Recharge History',
+      time: 'Recharge Time',
+      amount: 'Amount',
+      method: 'Payment Method',
+      methods: {
+        alipay: 'Alipay',
+        wechat: 'WeChat Pay',
+        card: 'Bank Card'
+      }
+    },
+    consumption: {
+      title: 'Consumption History',
+      time: 'Time',
+      amount: 'Amount',
+      type: 'Type',
+      description: 'Description',
+      types: {
+        service: 'Service Fee',
+        subscription: 'Subscription Fee',
+        other: 'Other Fee'
+      }
+    }
+  },
 }

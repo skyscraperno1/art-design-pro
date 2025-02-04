@@ -274,5 +274,32 @@ export default {
     purchaseOnOfficial: '官网购买',
     scanQRCode: '扫描二维码',
     required: '该字段为必填项'
+  },
+  recharge: {
+    title: '账户充值',
+    balance: '当前余额',
+    history: {
+      title: '充值记录',
+      time: '充值时间',
+      amount: '充值金额',
+      method: '充值方式',
+      methods: {
+        alipay: '支付宝',
+        wechat: '微信支付',
+        card: '银行卡'
+      }
+    },
+    consumption: {
+      title: '消费记录',
+      time: '消费时间',
+      amount: '消费金额',
+      type: '消费类型',
+      description: '消费说明',
+      types: {
+        service: '服务费用',
+        subscription: '订阅费用',
+        other: '其他费用'
+      }
+    }
   }
 }
