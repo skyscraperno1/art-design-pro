@@ -118,6 +118,8 @@ import { ref, reactive, computed } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import QrcodeVue from 'qrcode.vue'
 import { useI18n } from 'vue-i18n'
+import { ElMessage } from 'element-plus'
+
 
 const { t } = useI18n()
 const formRef = ref<FormInstance>()
@@ -141,10 +143,10 @@ const formData = reactive({
 })
 
 const rules = reactive<FormRules>({
-  country: [{ required: true, message: t('purchase.required'), trigger: 'change' }],
-  planType: [{ required: true, message: t('purchase.required'), trigger: 'change' }],
-  duration: [{ required: true, message: t('purchase.required'), trigger: 'change' }],
-  quantity: [{ required: true, message: t('purchase.required'), trigger: 'change' }]
+  country: [{ required: true, message: t('purchase.required'), trigger: 'blur' }],
+  planType: [{ required: true, message: t('purchase.required'), trigger: 'blur' }],
+  duration: [{ required: true, message: t('purchase.required'), trigger: 'blur' }],
+  quantity: [{ required: true, message: t('purchase.required'), trigger: 'blur' }]
 })
 
 // Mock data - Replace with dynamic data based on selections
@@ -203,11 +205,24 @@ const handleDirectPurchase = async () => {
       qrDialogVisible.value = true
       loading.value = false
     }, 1000)
+
+    setTimeout(() => {
+      ElMessage.success('Purchase success!')
+      qrDialogVisible.value = false
+      resetForm()
+    }, 3000)
   } catch (error) {
     console.error('Validation failed:', error)
   }
 }
 
+const resetForm = () => {
+  formData.country = ''
+  formData.dataAmount = ''
+  formData.duration = ''
+  formData.planType = ''
+  formData.quantity = 1
+}
 const redirectToOfficialSite = () => {
   // Implement redirect logic with current selection parameters
   window.open('https://official-esim-site.com', '_blank')

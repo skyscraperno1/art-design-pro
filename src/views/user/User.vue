@@ -6,124 +6,41 @@
           <img class="bg" src="@imgs/user/bg.png" />
           <img class="avatar" src="@imgs/user/avatar.png" />
           <h2 class="name">{{ userInfo.username }}</h2>
-          <p class="des">Art Design Pro 是一款漂亮的后台管理系统模版.</p>
-
           <div class="outer-info">
             <div>
               <i class="iconfont-sys">&#xe72e;</i>
               <span>jdkjjfnndf@mall.com</span>
             </div>
-            <div>
-              <i class="iconfont-sys">&#xe608;</i>
-              <span>交互专家</span>
-            </div>
-            <div>
-              <i class="iconfont-sys">&#xe736;</i>
-              <span>广东省深圳市</span>
-            </div>
-            <div>
-              <i class="iconfont-sys">&#xe811;</i>
-              <span>字节跳动－某某平台部－UED</span>
-            </div>
           </div>
 
-          <div class="lables">
-            <h3>标签</h3>
-            <div>
-              <div v-for="item in lableList" :key="item">
-                {{ item }}
-              </div>
-            </div>
-          </div>
         </div>
-
-        <!-- <el-carousel class="gallery" height="160px"
-          :interval="5000"
-          indicator-position="none"
-        >
-          <el-carousel-item class="item" v-for="item in galleryList" :key="item">
-            <img :src="item"/>
-          </el-carousel-item>
-        </el-carousel> -->
       </div>
       <div class="right-wrap">
         <div class="info box-style">
-          <h1 class="title">基本设置</h1>
+          <h1 class="title">更改密码</h1>
 
           <el-form
-            :model="form"
+            :model="pwdForm"
+            :rules="pwdRules"
+            ref="pwdFormRef"
             class="form"
-            ref="ruleFormRef"
-            :rules="rules"
             label-width="86px"
             label-position="top"
           >
-            <el-row>
-              <el-form-item label="姓名" prop="realName">
-                <el-input v-model="form.realName" :disabled="!isEdit" />
-              </el-form-item>
-              <el-form-item label="性别" prop="sex" class="right-input">
-                <el-select v-model="form.sex" placeholder="Select" :disabled="!isEdit">
-                  <el-option
-                    v-for="item in options"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value"
-                  />
-                </el-select>
-              </el-form-item>
-            </el-row>
-
-            <el-row>
-              <el-form-item label="昵称" prop="nikeName">
-                <el-input v-model="form.nikeName" :disabled="!isEdit" />
-              </el-form-item>
-              <el-form-item label="邮箱" prop="email" class="right-input">
-                <el-input v-model="form.email" :disabled="!isEdit" />
-              </el-form-item>
-            </el-row>
-
-            <el-row>
-              <el-form-item label="手机" prop="mobile">
-                <el-input v-model="form.mobile" :disabled="!isEdit" />
-              </el-form-item>
-              <el-form-item label="地址" prop="address" class="right-input">
-                <el-input v-model="form.address" :disabled="!isEdit" />
-              </el-form-item>
-            </el-row>
-
-            <el-form-item label="个人介绍" prop="des" :style="{ height: '130px' }">
-              <el-input type="textarea" :rows="4" v-model="form.des" :disabled="!isEdit" />
-            </el-form-item>
-
-            <div class="el-form-item-right">
-              <el-button type="primary" style="width: 90px" @click="edit">
-                {{ isEdit ? '保存' : '编辑' }}
-              </el-button>
-            </div>
-          </el-form>
-        </div>
-
-        <div class="info box-style" style="margin-top: 20px">
-          <h1 class="title">更改密码</h1>
-
-          <el-form :model="pwdForm" class="form" label-width="86px" label-position="top">
             <el-form-item label="当前密码" prop="password">
-              <el-input v-model="pwdForm.password" type="password" :disabled="!isEditPwd" />
+              <el-input v-model="pwdForm.password" type="password" show-password />
             </el-form-item>
 
             <el-form-item label="新密码" prop="newPassword">
-              <el-input v-model="pwdForm.newPassword" type="password" :disabled="!isEditPwd" />
+              <el-input v-model="pwdForm.newPassword" type="password" show-password />
             </el-form-item>
 
             <el-form-item label="确认新密码" prop="confirmPassword">
-              <el-input v-model="pwdForm.confirmPassword" type="password" :disabled="!isEditPwd" />
+              <el-input v-model="pwdForm.confirmPassword" type="password" show-password />
             </el-form-item>
 
             <div class="el-form-item-right">
-              <el-button type="primary" style="width: 90px" @click="editPwd">
-                {{ isEditPwd ? '保存' : '编辑' }}
-              </el-button>
+              <el-button type="primary" style="width: 90px" @click="editPwd"> 保存 </el-button>
             </div>
           </el-form>
         </div>
@@ -140,7 +57,6 @@
   const userInfo = computed(() => userStore.getUserInfo)
 
   const isEdit = ref(false)
-  const isEditPwd = ref(false)
   const date = ref('')
   const form = reactive({
     realName: 'John Snow',
@@ -153,38 +69,47 @@
   })
 
   const pwdForm = reactive({
-    password: '123456',
-    newPassword: '123456',
-    confirmPassword: '123456'
+    password: '',
+    newPassword: '',
+    confirmPassword: ''
   })
 
-  const ruleFormRef = ref<FormInstance>()
+  const pwdFormRef = ref<FormInstance>()
 
-  const rules = reactive<FormRules>({
-    realName: [
-      { required: true, message: '请输入昵称', trigger: 'blur' },
-      { min: 2, max: 50, message: '长度在 2 到 30 个字符', trigger: 'blur' }
+  const pwdRules = reactive<FormRules>({
+    password: [
+      { required: true, message: '请输入当前密码', trigger: 'blur' },
+      { min: 6, message: '密码长度不能小于6位', trigger: 'blur' }
     ],
-    nikeName: [
-      { required: true, message: '请输入昵称', trigger: 'blur' },
-      { min: 2, max: 50, message: '长度在 2 到 30 个字符', trigger: 'blur' }
+    newPassword: [
+      { required: true, message: '请输入新密码', trigger: 'blur' },
+      { min: 6, message: '密码长度不能小于6位', trigger: 'blur' },
+      {
+        validator: (rule: any, value: string, callback: any) => {
+          if (value === pwdForm.password) {
+            callback(new Error('新密码不能与当前密码相同'))
+          } else {
+            callback()
+          }
+        },
+        trigger: 'blur'
+      }
     ],
-    email: [{ required: true, message: '请输入昵称', trigger: 'blur' }],
-    mobile: [{ required: true, message: '请输入手机号码', trigger: 'blur' }],
-    address: [{ required: true, message: '请输入地址', trigger: 'blur' }],
-    sex: [{ type: 'array', required: true, message: '请选择性别', trigger: 'blur' }]
+    confirmPassword: [
+      { required: true, message: '请确认新密码', trigger: 'blur' },
+      { min: 6, message: '密码长度不能小于6位', trigger: 'blur' },
+      {
+        validator: (rule: any, value: string, callback: any) => {
+          if (value !== pwdForm.newPassword) {
+            callback(new Error('两次输入的密码不一致'))
+          } else {
+            callback()
+          }
+        },
+        trigger: 'blur'
+      }
+    ]
   })
-
-  const options = [
-    {
-      value: '1',
-      label: '男'
-    },
-    {
-      value: '2',
-      label: '女'
-    }
-  ]
 
   const lableList: Array<string> = ['专注设计', '很有想法', '辣~', '大长腿', '川妹子', '海纳百川']
 
@@ -214,12 +139,14 @@
     date.value = text
   }
 
-  const edit = () => {
-    isEdit.value = !isEdit.value
-  }
-
   const editPwd = () => {
-    isEditPwd.value = !isEditPwd.value
+    if (!pwdFormRef.value) return
+    pwdFormRef.value.validate((valid) => {
+      if (valid) {
+        console.log('保存密码', pwdForm)
+        // TODO: 调用修改密码API
+      }
+    })
   }
 </script>
 
@@ -257,12 +184,12 @@
       margin-top: 10px;
 
       .left-wrap {
-        width: 450px;
+        width: 45%;
         margin-right: 25px;
 
         .user-wrap {
           position: relative;
-          height: 600px;
+          height: 364px;
           padding: 35px 40px;
           overflow: hidden;
           text-align: center;

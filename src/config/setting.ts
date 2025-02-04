@@ -9,7 +9,7 @@ export const ElementPlusTheme = {
 // 系统信息
 export const SystemInfo = {
   // 系统名称
-  name: 'World Travel Kit',
+  name: 'eSIM One',
   // 登录默认帐号、密码
   login: {
     username: 'admin',

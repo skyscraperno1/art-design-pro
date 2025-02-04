@@ -195,14 +195,14 @@ export const roleRoutes: AppRouteRecordRaw[] = [
       title_jp: 'ユーザー管理'
     },
     children: [
-      // {
-      //   path: '/user/user',
-      //   name: 'Users',
-      //   component: () => import('@views/user/User.vue'),
-      //   meta: {
-      //     title: '个人中心'
-      //   }
-      // },
+       {
+        path: '/user/user',
+        name: 'Users',
+        component: () => import('@views/user/User.vue'),
+        meta: {
+          title: '个人中心'
+        }
+      },
       {
         path: '/user/account',
         name: 'Account',
@@ -221,16 +221,6 @@ export const roleRoutes: AppRouteRecordRaw[] = [
           title: '部门管理',
           title_en: 'Department Management',
           title_jp: '部門管理'
-        }
-      },
-      {
-        path: '/user/role',
-        name: 'Role',
-        component: () => import('@views/user/Role.vue'),
-        meta: {
-          title: '角色权限',
-          title_en: 'Role Permissions',
-          title_jp: '役割権限'
         }
       }
     ]
@@ -702,7 +692,23 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         ]
       }
     ]
-  }
+  },
+  {
+    path: '/recharge',
+    component: Home,
+    name: 'Recharge',
+    children: [
+      {
+        path: '',
+        component: () => import('@views/recharge/Recharge.vue'),
+        meta: {
+          title: 'eSIM购买',
+          title_en: ' Purchase eSIM',
+          title_jp: 'eSIM購入'
+        }
+      }
+    ]
+  },
 ]
 
 // 是否注册路由

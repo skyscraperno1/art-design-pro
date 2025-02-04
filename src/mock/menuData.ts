@@ -37,6 +37,16 @@ export const menuData: MenuListType[] = [
     },
     children: [
       {
+        id: 304,
+        path: '/user/user',
+        meta: {
+          title: '个人中心',
+          title_en: 'User center',
+          title_jp: 'ユーザーセンター',
+          keepAlive: true
+        }
+      },
+      {
         id: 301,
         path: '/user/account',
         meta: {
@@ -57,6 +67,18 @@ export const menuData: MenuListType[] = [
       title_en: 'Purchase eSIM',
       title_jp: 'eSIM購入',
       icon: '&#xe7ef;',
+      keepAlive: true
+    }
+  },
+  {
+    id: 4,
+    path: '/recharge',
+    name: 'Recharge',
+    meta: {
+      title: '充值管理',
+      title_en: 'Recharge Management',
+      title_jp: 'リチャージ管理',
+      icon: '&#xe6f6;',
       keepAlive: true
     }
   },
