@@ -271,4 +271,24 @@ export default {
       btn: 'Go Back' 
     }
   },
+  purchase: {
+    purchaseTitle: 'Purchase eSIM',
+    country: 'Country/Region',
+    selectCountry: 'Select a country',
+    planType: 'Plan Type',
+    unlimited: 'Unlimited',
+    dataLimit: 'Data Limited',
+    daily: 'Daily Plan',
+    duration: 'Duration',
+    selectDuration: 'Select duration',
+    days: 'days',
+    dataAmount: 'Data Amount',
+    selectData: 'Select data amount',
+    quantity: 'Quantity',
+    totalPrice: 'Total Price',
+    purchaseWithBalance: 'Purchase with Balance',
+    purchaseOnOfficial: 'Purchase on Official Site',
+    scanQRCode: 'Scan QR Code',
+    required: 'This field is required'
+  },
 }

@@ -280,7 +280,6 @@
         // 回显数据
         if (type === 'menu') {
           // 菜单数据回显
-          // console.log(row.meta)
           form.name = row.meta.title
           form.path = row.path
           form.label = row.name

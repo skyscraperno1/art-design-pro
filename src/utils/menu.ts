@@ -25,7 +25,7 @@ function processMenuItem(
   routesToAdd: AppRouteRecordRaw[]
 ) {
   const { path, children = [], meta } = item
-  const { title, title_en, icon, authList, keepAlive, isHide, isHideTab, isIframe, link } = meta
+  const { title, title_en, title_jp, icon, authList, keepAlive, isHide, isHideTab, isIframe, link } = meta
 
   // 内嵌页面
   if (isIframe) {
@@ -36,6 +36,7 @@ function processMenuItem(
       meta: {
         title,
         title_en,
+        title_jp,
         icon,
         keepAlive,
         link,
@@ -54,6 +55,7 @@ function processMenuItem(
       ...(matchingRoute.meta || {}),
       title,
       title_en,
+      title_jp,
       icon,
       authList,
       keepAlive,
@@ -83,7 +85,8 @@ export const saveIframeRoutes = (routes: AppRouteRecordRaw[]) => {
 // 菜单标题映射
 const titlePropertyMap = {
   [LanguageEnum.ZH]: 'title',
-  [LanguageEnum.EN]: 'title_en'
+  [LanguageEnum.EN]: 'title_en',
+  [LanguageEnum.JP]: 'title_jp'
 }
 
 const getTitleProp = () => {

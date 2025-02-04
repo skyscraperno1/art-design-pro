@@ -21,7 +21,7 @@
         </el-form>
       </template>
       <template #bottom>
-        <el-button @click="showDialog('add')">添加用户</el-button>
+        <el-button @click="showDialog('add')">添加成员</el-button>
       </template>
     </table-bar>
 
@@ -67,6 +67,13 @@
           </template>
         </el-table-column>
         <el-table-column label="创建日期" prop="create_time" sortable v-if="columns[5].show" />
+        <el-table-column label="绑定ESIM状态" prop="bindingStatus" sortable v-if="columns[6].show" >
+          <template #default="scope">
+            <el-tag :type="scope.row.bindingStatus ? 'success' : 'danger'">
+              {{ scope.row.bindingStatus ? '已绑定' : '未绑定' }}  
+            </el-tag>
+          </template>
+        </el-table-column>
         <el-table-column fixed="right" label="操作" width="150px">
           <template #default="scope">
             <button-table type="edit" @click="showDialog('edit', scope.row)" />
@@ -138,10 +145,11 @@
   const columns = reactive([
     { name: '用户名', show: true },
     { name: '邮箱', show: true },
-    { name: '性别', show: true },
+    { name: '性别', show: false },
     { name: 'ESIM', show: true },
     { name: '状态', show: true },
-    { name: '创建日期', show: true }
+    { name: '创建日期', show: false },
+    { name: '绑定ESIM状态', show: true }
   ])
 
   const searchFormRef = ref<FormInstance>()

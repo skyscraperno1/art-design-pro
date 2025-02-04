@@ -35,7 +35,6 @@ export const useWorktabStore = defineStore({
     // 选项卡路由
     router(to: WorkTabType) {
       const index: number = this.opened.findIndex((i) => i.path === to.path)
-
       // 新增 tab
       if (index <= -1) {
         this.opened.push(to)
@@ -48,7 +47,7 @@ export const useWorktabStore = defineStore({
     remove(path: string, router: Router) {
       const opened = this.opened
       let index = opened.findIndex((i) => i.path === path)
-
+    
       if (index > -1) {
         opened.splice(index, 1)
       }

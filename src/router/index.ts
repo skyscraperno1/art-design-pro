@@ -62,6 +62,7 @@ const routes = [
         meta: {
           title: '工作台',
           title_en: 'Workbench',
+          title_jp: 'ワークベンチ',
           keepAlive: false
         }
       },
@@ -82,6 +83,8 @@ const routes = [
     component: () => import('@views/login/index.vue'),
     meta: {
       title: '登录',
+      title_en: 'Login',
+      title_jp: 'ログイン',
       isHideTab: true,
       setTheme: true
     }
@@ -91,6 +94,8 @@ const routes = [
     component: () => import('@views/register/index.vue'),
     meta: {
       title: '注册',
+      title_en: 'Register',
+      title_jp: '登録',
       isHideTab: true,
       noLogin: true,
       setTheme: true
@@ -101,6 +106,8 @@ const routes = [
     component: () => import('@views/forget-password/index.vue'),
     meta: {
       title: '忘记密码',
+      title_en: 'Forgot Password',
+      title_jp: 'パスワードを忘れた',
       isHideTab: true,
       noLogin: true,
       setTheme: true
@@ -163,6 +170,8 @@ const routes = [
     component: () => import('@views/template/pricing.vue'),
     meta: {
       title: '定价',
+      title_en: 'Pricing',
+      title_jp: '価格設定',
       isHideTab: true
     }
   }
@@ -181,7 +190,9 @@ export const roleRoutes: AppRouteRecordRaw[] = [
     name: 'User',
     component: Home,
     meta: {
-      title: '用户管理'
+      title: '用户管理',
+      title_en: 'User Management',
+      title_jp: 'ユーザー管理'
     },
     children: [
       // {
@@ -197,7 +208,9 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         name: 'Account',
         component: () => import('@views/user/Account.vue'),
         meta: {
-          title: '账号管理'
+          title: '账号管理',
+          title_en: 'Account Management',
+          title_jp: 'アカウント管理'
         }
       },
       {
@@ -205,7 +218,9 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         name: 'Department',
         component: () => import('@views/user/Department.vue'),
         meta: {
-          title: '部门管理'
+          title: '部门管理',
+          title_en: 'Department Management',
+          title_jp: '部門管理'
         }
       },
       {
@@ -213,7 +228,9 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         name: 'Role',
         component: () => import('@views/user/Role.vue'),
         meta: {
-          title: '角色权限'
+          title: '角色权限',
+          title_en: 'Role Permissions',
+          title_jp: '役割権限'
         }
       }
     ]
@@ -224,7 +241,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
     component: Home,
     meta: {
       title: '菜单管理',
-      title_en: 'Menu Management'
+      title_en: 'Menu Management',
+      title_jp: 'メニュー管理'
     },
     children: [
       {
@@ -233,7 +251,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         component: () => import('@views/menu/Menu.vue'),
         meta: {
           title: '菜单管理',
-          title_en: 'Menu Management'
+          title_en: 'Menu Management',
+          title_jp: 'メニュー管理'
         }
       },
       {
@@ -242,7 +261,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         component: () => import('@views/menu/Permission.vue'),
         meta: {
           title: '权限控制',
-          title_en: 'Permission Control'
+          title_en: 'Permission Control',
+          title_jp: '権限制御'
         }
       },
       {
@@ -250,7 +270,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         name: 'Nested',
         meta: {
           title: '嵌套菜单',
-          title_en: 'Nested Menu'
+          title_en: 'Nested Menu',
+          title_jp: 'ネストメニュー'
         },
         children: [
           {
@@ -259,7 +280,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
             component: () => import('@views/menu/nested/menu1.vue'),
             meta: {
               title: '菜单1',
-              title_en: 'Menu 1'
+              title_en: 'Menu 1',
+              title_jp: 'メニュー1'
             }
           },
           {
@@ -267,7 +289,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
             name: 'NestedMenu2',
             meta: {
               title: '菜单2',
-              title_en: 'Menu 2'
+              title_en: 'Menu 2',
+              title_jp: 'メニュー2'
             },
             children: [
               {
@@ -276,7 +299,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
                 component: () => import('@views/menu/nested/menu2/menu2-1.vue'),
                 meta: {
                   title: '菜单2-1',
-                  title_en: 'Menu 2-1'
+                  title_en: 'Menu 2-1',
+                  title_jp: 'メニュー2-1'
                 }
               }
             ]
@@ -286,7 +310,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
             name: 'NestedMenu3',
             meta: {
               title: '菜单3',
-              title_en: 'Menu 3'
+              title_en: 'Menu 3',
+              title_jp: 'メニュー3'
             },
             children: [
               {
@@ -295,7 +320,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
                 component: () => import('@views/menu/nested/menu3/menu3-1.vue'),
                 meta: {
                   title: '菜单3-1',
-                  title_en: 'Menu 3-1'
+                  title_en: 'Menu 3-1',
+                  title_jp: 'メニュー3-1'
                 }
               },
               {
@@ -303,7 +329,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
                 name: 'NestedMenu3-2',
                 meta: {
                   title: '菜单3-2',
-                  title_en: 'Menu 3-2'
+                  title_en: 'Menu 3-2',
+                  title_jp: 'メニュー3-2'
                 },
                 children: [
                   {
@@ -312,7 +339,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
                     component: () => import('@views/menu/nested/menu3/menu3-2/menu3-2-1.vue'),
                     meta: {
                       title: '菜单3-2-1',
-                      title_en: 'Menu 3-2-1'
+                      title_en: 'Menu 3-2-1',
+                      title_jp: 'メニュー3-2-1'
                     }
                   }
                 ]
@@ -328,7 +356,9 @@ export const roleRoutes: AppRouteRecordRaw[] = [
     name: 'Result',
     component: Home,
     meta: {
-      title: '结果页面'
+      title: '结果页面',
+      title_en: 'Result Pages',
+      title_jp: '結果ページ'
     },
     children: [
       {
@@ -336,7 +366,9 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         name: 'Success',
         component: () => import('@views/result/Success.vue'),
         meta: {
-          title: '成功页'
+          title: '成功页',
+          title_en: 'Success Page',
+          title_jp: '成功ページ'
         }
       },
       {
@@ -344,7 +376,9 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         name: 'Fail',
         component: () => import('@views/result/Fail.vue'),
         meta: {
-          title: '失败页'
+          title: '失败页',
+          title_en: 'Failure Page',
+          title_jp: '失敗ページ'
         }
       }
     ]
@@ -354,21 +388,27 @@ export const roleRoutes: AppRouteRecordRaw[] = [
     component: Home,
     name: 'Article',
     meta: {
-      title: '文章管理'
+      title: '文章管理',
+      title_en: 'Article Management',
+      title_jp: '記事管理'
     },
     children: [
       {
         path: '/article/article-publish',
         component: () => import('@views/article/ArticlePublish.vue'),
         meta: {
-          title: '文章发布'
+          title: '文章发布',
+          title_en: 'Article Publish',
+          title_jp: '記事発行'
         }
       },
       {
         path: '/article/article-list',
         component: () => import('@views/article/ArticleList.vue'),
         meta: {
-          title: '文章列表'
+          title: '文章列表',
+          title_en: 'Article List',
+          title_jp: '記事一覧'
         }
       },
       {
@@ -376,6 +416,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         component: () => import('@views/article/ArticleDetail.vue'),
         meta: {
           title: '文章详情',
+          title_en: 'Article Detail',
+          title_jp: '記事詳細',
           isHideTab: true
         }
       },
@@ -383,7 +425,9 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         path: '/article/comment',
         component: () => import('@views/article/Comment.vue'),
         meta: {
-          title: '留言'
+          title: '留言',
+          title_en: 'Comment',
+          title_jp: 'コメント'
         }
       }
     ]
@@ -393,98 +437,126 @@ export const roleRoutes: AppRouteRecordRaw[] = [
     component: Home,
     name: 'Widgets',
     meta: {
-      title: '组件库'
+      title: '组件库',
+      title_en: 'Widgets',
+      title_jp: 'コンポーネントライブラリ'
     },
     children: [
       {
         path: '/widgets/icon-list',
         component: () => import('@views/widgets/IconList.vue'),
         meta: {
-          title: '图标库'
+          title: '图标库',
+          title_en: 'Icon Library',
+          title_jp: 'アイコンライブラリ'
         }
       },
       {
         path: '/widgets/icon-selector',
         component: () => import('@views/widgets/IconSelector.vue'),
         meta: {
-          title: '图标选择器'
+          title: '图标选择器',
+          title_en: 'Icon Selector',
+          title_jp: 'アイコンセレクター'
         }
       },
       {
         path: '/widgets/image-crop',
         component: () => import('@views/widgets/ImageCrop.vue'),
         meta: {
-          title: '图像裁剪'
+          title: '图像裁剪',
+          title_en: 'Image Crop',
+          title_jp: '画像クロップ'
         }
       },
       {
         path: '/widgets/excel',
         component: () => import('@views/widgets/Excel.vue'),
         meta: {
-          title: 'Excel'
+          title: 'Excel',
+          title_en: 'Excel',
+          title_jp: 'エクセル'
         }
       },
       {
         path: '/widgets/video',
         component: () => import('@views/widgets/Video.vue'),
         meta: {
-          title: '视频播放器'
+          title: '视频播放器',
+          title_en: 'Video Player',
+          title_jp: 'ビデオプレーヤー'
         }
       },
       {
         path: '/widgets/count-to',
         component: () => import('@views/widgets/CountTo.vue'),
         meta: {
-          title: '数字滚动'
+          title: '数字滚动',
+          title_en: 'Count To',
+          title_jp: 'カウントトゥー'
         }
       },
       {
         path: '/widgets/wang-editor',
         component: () => import('@views/widgets/WangEditor.vue'),
         meta: {
-          title: '富文本编辑器'
+          title: '富文本编辑器',
+          title_en: 'Rich Text Editor',
+          title_jp: 'リッチテキストエディター'
         }
       },
       {
         path: '/widgets/context-menu',
         component: () => import('@views/widgets/ContextMenu.vue'),
         meta: {
-          title: '右键菜单'
+          title: '右键菜单',
+          title_en: 'Context Menu',
+          title_jp: 'コンテキストメニュー'
         }
       },
       {
         path: '/widgets/watermark',
         component: () => import('@views/widgets/Watermark.vue'),
         meta: {
-          title: '水印'
+          title: '水印',
+          title_en: 'Watermark',
+          title_jp: 'ウォーターマーク'
         }
       },
       {
         path: '/widgets/qrcode',
         component: () => import('@views/widgets/QRcode.vue'),
         meta: {
-          title: '二维码'
+          title: '二维码',
+          title_en: 'QR Code',
+          title_jp: 'QRコード'
         }
       },
       {
         path: '/widgets/drag',
         component: () => import('@views/widgets/Drag.vue'),
         meta: {
-          title: '拖拽'
+          title: '拖拽',
+          title_en: 'Drag',
+          title_jp: 'ドラッグ'
         }
       },
       {
         path: '/widgets/text-scroll',
         component: () => import('@views/widgets/TextScroll.vue'),
         meta: {
-          title: '文字滚动'
+          title: '文字滚动',
+          title_en: 'Text Scroll',
+          title_jp: 'テキストスクロール'
         }
       },
       {
         path: '/widgets/fireworks',
         component: () => import('@views/widgets/Fireworks.vue'),
         meta: {
-          title: '礼花'
+          title: '礼花',
+          title_en: 'Fireworks',
+          title_jp: '花火'
         }
       }
     ]
@@ -494,28 +566,36 @@ export const roleRoutes: AppRouteRecordRaw[] = [
     component: Home,
     name: 'Template',
     meta: {
-      title: '模板'
+      title: '模板',
+      title_en: 'Template',
+      title_jp: 'テンプレート'
     },
     children: [
       {
         path: '/template/chat',
         component: () => import('@views/template/chat.vue'),
         meta: {
-          title: '聊天'
+          title: '聊天',
+          title_en: 'Chat',
+          title_jp: 'チャット'
         }
       },
       {
         path: '/template/cards',
         component: () => import('@views/template/cards.vue'),
         meta: {
-          title: '卡片'
+          title: '卡片',
+          title_en: 'Cards',
+          title_jp: 'カード'
         }
       },
       {
         path: '/template/banners',
         component: () => import('@views/template/banners.vue'),
         meta: {
-          title: '横幅'
+          title: '横幅',
+          title_en: 'Banners',
+          title_jp: 'バナー'
         }
       }
     ]
@@ -525,14 +605,18 @@ export const roleRoutes: AppRouteRecordRaw[] = [
     component: Home,
     name: 'System',
     meta: {
-      title: '系统设置'
+      title: '系统设置',
+      title_en: 'System Settings',
+      title_jp: 'システム設定'
     },
     children: [
       {
         path: '/system/setting',
         component: () => import('@views/system/Setting.vue'),
         meta: {
-          title: '系统设置'
+          title: '系统设置',
+          title_en: 'System Settings',
+          title_jp: 'システム設定'
         }
       },
       {
@@ -540,31 +624,34 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         name: 'Api',
         component: () => import('@views/system/Api.vue'),
         meta: {
-          title: 'API管理'
+          title: 'API管理',
+          title_en: 'API Management',
+          title_jp: 'API管理'
         }
       },
       {
         path: '/system/log',
         component: () => import('@views/system/Log.vue'),
         meta: {
-          title: '系统日志'
+          title: '系统日志',
+          title_en: 'System Log',
+          title_jp: 'システムログ'
         }
       }
     ]
   },
   {
-    path: '/safeguard',
+    path: '/purchase',
     component: Home,
-    name: 'Safeguard',
-    meta: {
-      title: '运维管理'
-    },
+    name: 'Purchase',
     children: [
       {
-        path: '/safeguard/server',
-        component: () => import('@views/safeguard/Server.vue'),
+        path: '',
+        component: () => import('@views/purchase/Purchase.vue'),
         meta: {
-          title: '服务器管理'
+          title: 'eSIM购买',
+          title_en: ' Purchase eSIM',
+          title_jp: 'eSIM購入'
         }
       }
     ]
@@ -573,16 +660,14 @@ export const roleRoutes: AppRouteRecordRaw[] = [
     path: '/esim',
     component: Home,
     name: 'eSIM',
-    meta: {
-      title: 'eSIM管理'
-    },
     children: [
       {
         path: '/esim/import',
         component: () => import('@views/widgets/Excel.vue'),
         meta: {
           title: '导入订单',
-          title_en: 'Order Import'
+          title_en: 'Order Import',
+          title_jp: '注文インポート'
         }
       },
       {
@@ -590,7 +675,8 @@ export const roleRoutes: AppRouteRecordRaw[] = [
         name: 'Preview',
         meta: {
           title: 'eSIM一览',
-          title_en: 'eSIM Preview'
+          title_en: 'eSIM Preview',
+          title_jp: 'eSIM一覧'
         },
         children: [
           {
@@ -600,15 +686,17 @@ export const roleRoutes: AppRouteRecordRaw[] = [
             meta: {
               title: 'eSIM绑定',
               title_en: 'eSIM Binding',
+              title_jp: 'eSIMバインド'
             }
           },
           {
             path: '/esim/preview/info',
             name: 'eSIM Info',
-            component: () => import('@views/menu/nested/menu2/menu2-1.vue'),
+            component: () => import('@views/esim/info.vue'),
             meta: {
               title: 'eSIM信息',
               title_en: 'eSIM Info',
+              title_jp: 'eSIM情報'
             }
           },
         ]
@@ -662,27 +750,30 @@ function setWorktab(to: RouteLocationNormalized) {
   const worktabStore = useWorktabStore()
   const settingStore = useSettingStore()
   const { meta, path, params, query } = to
-  const { title, title_en, isHideTab } = meta
+  const { title, title_en, title_jp, isHideTab } = meta
 
   if (!isHideTab) {
     if (isIframe(path)) {
       const iframeRoute = getIframeRoutes().find((route: any) => route.path === to.path)
-
+      
       if (iframeRoute?.meta) {
-        const { title, title_en } = iframeRoute.meta
+        const { title, title_en, title_jp } = iframeRoute.meta
         worktabStore.router({
           title,
           title_en,
+          title_jp,
           path,
           params,
           query
         })
       }
     } else {
+
       if (settingStore.showWorkTab) {
         worktabStore.router({
           title: title as string,
           title_en: title_en as string,
+          title_jp: title_jp as string,
           path,
           params,
           query

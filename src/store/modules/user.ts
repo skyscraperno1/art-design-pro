@@ -19,7 +19,7 @@ interface UserState {
 export const useUserStore = defineStore({
   id: 'userStore',
   state: (): UserState => ({
-    language: LanguageEnum.ZH,
+    language: LanguageEnum.EN,
     isLogin: false,
     isLock: false,
     lockPassword: '',
@@ -48,7 +48,7 @@ export const useUserStore = defineStore({
         this.info = info || {}
         this.isLogin = isLogin || false
         this.isLock = isLock || false
-        this.language = language || LanguageEnum.ZH
+        this.language = language || LanguageEnum.EN
         this.searchHistory = searchHistory || []
         this.lockPassword = lockPassword || ''
       }

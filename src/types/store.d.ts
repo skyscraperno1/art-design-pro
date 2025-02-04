@@ -52,6 +52,7 @@ export interface Setting {
 export interface WorkTabType {
   title: string
   title_en?: string
+  title_jp?: string
   path: string
   params?: object
   query?: object

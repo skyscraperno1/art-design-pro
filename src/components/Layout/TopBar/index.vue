@@ -105,6 +105,12 @@
                     <i v-if="locale === 'zh'" class="iconfont-sys">&#xe621;</i>
                   </el-dropdown-item>
                 </div>
+                <div class="lang-btn-item">
+                  <el-dropdown-item command="jp">
+                    <span class="menu-txt">日本語</span>
+                    <i v-if="locale === 'jp'" class="iconfont-sys">&#xe621;</i>
+                  </el-dropdown-item>
+                </div>
               </el-dropdown-menu>
             </template>
           </el-dropdown>

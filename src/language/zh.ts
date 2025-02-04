@@ -254,5 +254,25 @@ export default {
       desc: '抱歉，你访问的页面不存在e',
       btn: '返回首页' 
     }
+  },
+  purchase: {
+    purchaseTitle: '购买 eSIM',
+    country: '国家/地区',
+    selectCountry: '选择国家',
+    planType: '套餐类型',
+    unlimited: '无限流量',
+    dataLimit: '定量流量',
+    daily: '按天计费',
+    duration: '使用时长',
+    selectDuration: '选择时长',
+    days: '天',
+    dataAmount: '数据流量',
+    selectData: '选择流量',
+    quantity: '数量',
+    totalPrice: '总价',
+    purchaseWithBalance: '余额支付',
+    purchaseOnOfficial: '官网购买',
+    scanQRCode: '扫描二维码',
+    required: '该字段为必填项'
   }
 }

@@ -52,7 +52,11 @@
 <script setup lang="ts">
   import { useSettingStore } from '@/store/modules/setting'
   import { Search, RefreshRight, Operation } from '@element-plus/icons-vue'
-
+  
+  interface ColumnItem {
+    name: string;
+    show: boolean
+  }
   const emit = defineEmits(['search', 'reset', 'changeColumn'])
 
   const props = defineProps({
@@ -65,7 +69,7 @@
       default: true
     },
     columns: {
-      type: Array,
+      type: Array<ColumnItem>,
       default: () => []
     },
     layout: {
@@ -76,8 +80,8 @@
 
   const settingStore = useSettingStore()
   const showSearchWrap = ref(true)
-  const colOptions = ref([])
-  const colSelect = ref([])
+  const colOptions = ref<string[]>([])
+  const colSelect = ref<string[]>([])
   const columnChage = ref(false)
 
   onMounted(() => {
@@ -98,10 +102,12 @@
   const showPopover = () => {
     if (!columnChage.value) {
       let ops: any = []
-      props.columns.map((item: any) => {
+      props.columns.forEach((item: ColumnItem) => {
         ops.push(item.name)
       })
-      colOptions.value = ops
+      const checkedItem = props.columns.filter((item: ColumnItem) => item.show)
+      const checkOptions = checkedItem.map((item: ColumnItem) => item.name)
+      colOptions.value = checkOptions
       colSelect.value = ops
       columnChage.value = true
     }

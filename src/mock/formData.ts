@@ -14,6 +14,7 @@ export const ACCOUNT_TABLE_DATA: any = [
     create_time: '2024-09-09 10:01:10',
     avatar: avatar1,
     esim: '123123',
+    bindingStatus: false,
   },
   {
     username: '何小荷',
@@ -24,6 +25,7 @@ export const ACCOUNT_TABLE_DATA: any = [
     status: '1',
     create_time: '2024-10-10 13:01:12',
     esim: '123131',
+    bindingStatus: false,
     avatar: avatar2
   },
   {
@@ -35,6 +37,7 @@ export const ACCOUNT_TABLE_DATA: any = [
     status: '3',
     create_time: '2024-11-14 12:01:45',
     avatar: avatar3,
+    bindingStatus: true,
     esim: '1233213',
   },
   {
@@ -46,6 +49,7 @@ export const ACCOUNT_TABLE_DATA: any = [
     status: '4',
     create_time: '2024-11-14 09:01:20',
     avatar: avatar4,
+    bindingStatus: false,
     esim: '33213',
   }
 ]
